@@ -16,10 +16,11 @@
 
 # By default, use the developer llm_config
 # Worth noting that includes using env var substitution is expressly forbidden by HOCON readers.
-include "developer_llm_config.hocon"
 
+# Override with gemini-3-flash as the single model (no fallbacks)
 {
     "llm_config": {
+        "class": "gemini",
         "model_name": "gemini-3-flash"
     }
 }
